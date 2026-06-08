@@ -1,0 +1,8 @@
+select
+  name           as "Policy:Link/Insurance Policy:150",
+  customer       as "Customer:Link/Customer:150",
+  policy_end     as "Expiry Date:Date:120",
+  premium        as "Premium:Currency:120"
+from `tabInsurance Policy`
+where policy_end between CURDATE() and DATE_ADD(CURDATE(), INTERVAL 30 DAY)
+order by policy_end

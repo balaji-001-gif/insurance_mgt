@@ -1,0 +1,116 @@
+{
+    "actions": [],
+    "allow_import": 1,
+    "autoname": "field:claim_id",
+    "creation": "2026-01-01 00:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "claim_details",
+        "claim_id",
+        "policy",
+        "claimant_name",
+        "date_of_claim",
+        "claim_amount",
+        "status",
+        "ai_section",
+        "claim_description",
+        "incident_description",
+        "fraud_flag"
+    ],
+    "fields": [
+        {
+            "fieldname": "claim_details",
+            "fieldtype": "Section Break",
+            "label": "Claim Details"
+        },
+        {
+            "fieldname": "claim_id",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Claim ID",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "policy",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Policy",
+            "options": "Insurance Policy",
+            "reqd": 1
+        },
+        {
+            "fieldname": "claimant_name",
+            "fieldtype": "Data",
+            "label": "Claimant Name"
+        },
+        {
+            "fieldname": "date_of_claim",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Date of Claim",
+            "reqd": 1
+        },
+        {
+            "fieldname": "claim_amount",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Claim Amount",
+            "reqd": 1
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Status",
+            "options": "Draft\nSubmitted\nApproved\nRejected"
+        },
+        {
+            "fieldname": "ai_section",
+            "fieldtype": "Section Break",
+            "label": "AI-Assisted Processing"
+        },
+        {
+            "fieldname": "claim_description",
+            "fieldtype": "Text",
+            "label": "Claim Description (Free Text)"
+        },
+        {
+            "fieldname": "incident_description",
+            "fieldtype": "Small Text",
+            "label": "Incident Description"
+        },
+        {
+            "fieldname": "fraud_flag",
+            "fieldtype": "Check",
+            "label": "Potential Fraud Detected",
+            "read_only": 1
+        }
+    ],
+    "links": [],
+    "modified": "2026-06-08 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Policy Bazar",
+    "name": "Policy Claim",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

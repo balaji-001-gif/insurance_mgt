@@ -1,0 +1,6 @@
+select
+  insurer            as "Insurer:Link/Insurer:200",
+  count(name)        as "Total Policies:Int:100",
+  sum(premium)       as "Total Premium:Currency:150"
+from `tabInsurance Policy`
+group by insurer

@@ -1,0 +1,46 @@
+<p>Dear {{ customer_name }},</p>
+
+<p>Thank you for choosing Policy Bazar. Based on your details, we have prepared the following insurance quote for your review:</p>
+
+<h4>Quote Summary</h4>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Policy Number</strong></td>
+        <td>{{ policy.policy_number }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Insurer</strong></td>
+        <td>{{ policy.insurer }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Policy Type</strong></td>
+        <td>{{ policy.policy_type }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Premium</strong></td>
+        <td>{{ frappe.utils.fmt_money(policy.premium) }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Sum Assured</strong></td>
+        <td>{{ frappe.utils.fmt_money(policy.sum_assured) if policy.sum_assured else 'N/A' }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Risk Score</strong></td>
+        <td>{{ policy.risk_score }}%</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>Start Date</strong></td>
+        <td>{{ policy.policy_start }}</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8f9fa;"><strong>End Date</strong></td>
+        <td>{{ policy.policy_end }}</td>
+    </tr>
+</table>
+
+<p>Please find attached the formal quote PDF for your records.</p>
+
+<p>If you have any questions or would like to proceed, feel free to contact us.</p>
+
+<p>Best regards,<br>
+<strong>Policy Bazar Team</strong></p>

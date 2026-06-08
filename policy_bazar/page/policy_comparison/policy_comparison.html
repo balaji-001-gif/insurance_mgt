@@ -1,0 +1,51 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<div class="container mt-4">
+    <h3>{{ title }}</h3>
+    <p class="text-muted">Side-by-side comparison of all insurance policies</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>Policy</th>
+                    <th>Insurer</th>
+                    <th>Type</th>
+                    <th>Premium</th>
+                    <th>Risk Score</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in policies %}
+                <tr>
+                    <td>
+                        <a href="/app/insurance-policy/{{ p.name }}">{{ p.name }}</a>
+                    </td>
+                    <td>{{ p.insurer }}</td>
+                    <td>{{ p.policy_type }}</td>
+                    <td>{{ frappe.utils.fmt_money(p.premium) }}</td>
+                    <td>
+                        <span class="badge
+                            {% if p.risk_score and p.risk_score > 70 %}badge-danger
+                            {% elif p.risk_score and p.risk_score > 40 %}badge-warning
+                            {% else %}badge-success{% endif %}">
+                            {{ p.risk_score or 'N/A' }}%
+                        </span>
+                    </td>
+                    <td>{{ p.policy_start }}</td>
+                    <td>{{ p.policy_end }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if not policies %}
+    <div class="alert alert-info mt-3">
+        No insurance policies found. Create one to see it here.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

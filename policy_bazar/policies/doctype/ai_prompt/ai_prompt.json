@@ -1,0 +1,72 @@
+{
+    "actions": [],
+    "allow_import": 0,
+    "autoname": "field:prompt_name",
+    "creation": "2026-01-01 00:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "prompt_config",
+        "prompt_name",
+        "model",
+        "temperature",
+        "prompt_template"
+    ],
+    "fields": [
+        {
+            "fieldname": "prompt_config",
+            "fieldtype": "Section Break",
+            "label": "Prompt Configuration"
+        },
+        {
+            "fieldname": "prompt_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Prompt Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "default": "gpt-4o",
+            "fieldname": "model",
+            "fieldtype": "Data",
+            "label": "Model"
+        },
+        {
+            "default": "0",
+            "fieldname": "temperature",
+            "fieldtype": "Float",
+            "label": "Temperature"
+        },
+        {
+            "fieldname": "prompt_template",
+            "fieldtype": "Text",
+            "label": "Prompt Template",
+            "reqd": 1
+        }
+    ],
+    "links": [],
+    "modified": "2026-06-08 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Policy Bazar",
+    "name": "AI Prompt",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

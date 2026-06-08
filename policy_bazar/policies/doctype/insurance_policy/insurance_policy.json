@@ -1,0 +1,166 @@
+{
+    "actions": [],
+    "allow_import": 1,
+    "autoname": "field:policy_number",
+    "creation": "2026-01-01 00:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "policy_details",
+        "policy_number",
+        "customer",
+        "insurer",
+        "policy_type",
+        "sum_assured",
+        "premium",
+        "policy_period",
+        "policy_start",
+        "column_break_period",
+        "policy_end",
+        "ai_section",
+        "risk_score",
+        "risk_score_last_updated",
+        "risk_score_overridden",
+        "override_reason"
+    ],
+    "fields": [
+        {
+            "fieldname": "policy_details",
+            "fieldtype": "Section Break",
+            "label": "Policy Details"
+        },
+        {
+            "fieldname": "policy_number",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Policy Number",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "insurer",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Insurer",
+            "options": "Insurer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "policy_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Policy Type",
+            "options": "Life\nHealth\nVehicle\nHome\nTravel\nGeneral",
+            "default": "Life"
+        },
+        {
+            "fieldname": "sum_assured",
+            "fieldtype": "Currency",
+            "label": "Sum Assured"
+        },
+        {
+            "fieldname": "premium",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Premium",
+            "reqd": 1
+        },
+        {
+            "fieldname": "policy_period",
+            "fieldtype": "Section Break",
+            "label": "Policy Period"
+        },
+        {
+            "fieldname": "policy_start",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Start Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_period",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "policy_end",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "End Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "ai_section",
+            "fieldtype": "Section Break",
+            "label": "AI Risk Scoring"
+        },
+        {
+            "fieldname": "risk_score",
+            "fieldtype": "Percent",
+            "label": "AI Risk Score",
+            "read_only": 1
+        },
+        {
+            "fieldname": "risk_score_last_updated",
+            "fieldtype": "Datetime",
+            "label": "Risk Score Last Updated",
+            "read_only": 1
+        },
+        {
+            "fieldname": "risk_score_overridden",
+            "fieldtype": "Check",
+            "label": "Overridden by User"
+        },
+        {
+            "depends_on": "eval:doc.risk_score_overridden",
+            "fieldname": "override_reason",
+            "fieldtype": "Small Text",
+            "label": "Override Reason"
+        }
+    ],
+    "links": [
+        {
+            "group": "Claims",
+            "link_doctype": "Policy Claim",
+            "link_fieldname": "policy"
+        }
+    ],
+    "modified": "2026-06-08 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Policy Bazar",
+    "name": "Insurance Policy",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Accounts User",
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

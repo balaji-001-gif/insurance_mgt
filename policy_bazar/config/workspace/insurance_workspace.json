@@ -1,0 +1,215 @@
+{
+    "app": "policy_bazar",
+    "charts": [
+        {
+            "chart_name": "Average Risk by Insurer",
+            "label": "Average Risk by Insurer"
+        },
+        {
+            "chart_name": "Monthly Fraud Rate",
+            "label": "Monthly Fraud Rate"
+        }
+    ],
+    "content": "[{\"id\":\"hdr-master\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data</b></span>\",\"col\":12}},{\"id\":\"card-customers\",\"type\":\"card\",\"data\":{\"card_name\":\"Customers\",\"col\":4}},{\"id\":\"card-insurers\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurers\",\"col\":4}},{\"id\":\"card-prompts\",\"type\":\"card\",\"data\":{\"card_name\":\"AI Prompts\",\"col\":4}},{\"id\":\"spacer-1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hdr-ops\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Operations</b></span>\",\"col\":12}},{\"id\":\"card-policies\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Policies\",\"col\":4}},{\"id\":\"card-claims\",\"type\":\"card\",\"data\":{\"card_name\":\"Policy Claims\",\"col\":4}},{\"id\":\"card-comparison\",\"type\":\"card\",\"data\":{\"card_name\":\"Policy Comparison\",\"col\":4}},{\"id\":\"spacer-2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hdr-analytics\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Analytics</b></span>\",\"col\":12}},{\"id\":\"chart-risk\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Average Risk by Insurer\",\"col\":6}},{\"id\":\"chart-fraud\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Fraud Rate\",\"col\":6}},{\"id\":\"spacer-3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hdr-reports\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"card-report-by-insurer\",\"type\":\"card\",\"data\":{\"card_name\":\"Policies by Insurer\",\"col\":6}},{\"id\":\"card-report-expiries\",\"type\":\"card\",\"data\":{\"card_name\":\"Upcoming Expiries\",\"col\":6}}]",
+    "creation": "2026-01-01 00:00:00.000000",
+    "custom_blocks": [],
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "shield",
+    "idx": 0,
+    "is_hidden": 0,
+    "label": "Insurance Dashboard",
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Customers",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Customer",
+            "link_count": 0,
+            "link_to": "Customer",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Insurers",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Insurer",
+            "link_count": 0,
+            "link_to": "Insurer",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "AI Prompts",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "AI Prompt",
+            "link_count": 0,
+            "link_to": "AI Prompt",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Insurance Policies",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "Customer, Insurer",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Insurance Policy",
+            "link_count": 0,
+            "link_to": "Insurance Policy",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Policy Claims",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "Insurance Policy",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Policy Claim",
+            "link_count": 0,
+            "link_to": "Policy Claim",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Policy Comparison",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Policy Comparison",
+            "link_count": 0,
+            "link_to": "policy-comparison",
+            "link_type": "Page",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Key Reports",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Policies by Insurer",
+            "link_count": 0,
+            "link_to": "Policies by Insurer",
+            "link_type": "Report",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Upcoming Policy Expiries",
+            "link_count": 0,
+            "link_to": "Upcoming Policy Expiries",
+            "link_type": "Report",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Analytics",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Average Risk by Insurer",
+            "link_count": 0,
+            "link_to": "Average Risk by Insurer",
+            "link_type": "Chart",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Monthly Fraud Rate",
+            "link_count": 0,
+            "link_to": "Monthly Fraud Rate",
+            "link_type": "Chart",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ],
+    "modified": "2026-06-08 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Policy Bazar",
+    "name": "Insurance Dashboard",
+    "number_cards": [],
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "quick_lists": [],
+    "restrict_to_domain": "",
+    "roles": [],
+    "sequence_id": 50.0,
+    "shortcuts": [],
+    "title": "Insurance Dashboard",
+    "type": "Workspace"
+}
