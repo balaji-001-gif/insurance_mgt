@@ -1,0 +1,30 @@
+[
+    {
+        "doctype": "Dashboard Chart",
+        "chart_name": "Average Risk by Insurer",
+        "chart_type": "Group By",
+        "document_type": "Insurance Policy",
+        "group_by_type": "Average",
+        "based_on": "insurer",
+        "aggregate_function_based_on": "risk_score",
+        "is_public": 1,
+        "filters_json": "[]",
+        "type": "Bar",
+        "timeseries": 0,
+        "timespan": "Last Month",
+        "time_interval": "Monthly"
+    },
+    {
+        "doctype": "Dashboard Chart",
+        "chart_name": "Monthly Fraud Rate",
+        "chart_type": "Count",
+        "document_type": "Policy Claim",
+        "based_on": "creation",
+        "is_public": 1,
+        "filters_json": "[[\"Policy Claim\",\"fraud_flag\",\"=\",1]]",
+        "type": "Line",
+        "timeseries": 1,
+        "timespan": "Last Month",
+        "time_interval": "Monthly"
+    }
+]

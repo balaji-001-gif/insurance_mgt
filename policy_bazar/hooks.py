@@ -49,3 +49,18 @@ page_js = {
 
 # Jinja methods available in templates
 # jinja = {}
+
+# -----------------------------------------------------------------------
+# Fixtures - auto-loaded on bench migrate
+# -----------------------------------------------------------------------
+fixtures = [
+    {"dt": "AI Prompt", "filters": [["name", "in", ["Risk Scoring", "Policy Recommendations", "Claim Auto-Fill", "Fraud Detection"]]]},
+    {"dt": "Role", "filters": [["role_name", "in", ["Insurance Manager", "Insurance User"]]]},
+    {"dt": "Dashboard Chart", "filters": [["chart_name", "in", ["Average Risk by Insurer", "Monthly Fraud Rate"]]]},
+    {"dt": "Number Card", "filters": [["name", "in", ["Active Policies", "Total Premium Written", "Pending Claims"]]]},
+]
+
+# -----------------------------------------------------------------------
+# After install - runs once after app is installed
+# -----------------------------------------------------------------------
+after_install = "policy_bazar.setup.install.after_install"

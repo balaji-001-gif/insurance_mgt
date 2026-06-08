@@ -1,0 +1,33 @@
+[
+    {
+        "doctype": "Number Card",
+        "name": "Active Policies",
+        "label": "Active Policies",
+        "document_type": "Insurance Policy",
+        "function": "Count",
+        "is_public": 1,
+        "filters_json": "[[\"Insurance Policy\",\"policy_end\",\">\",\"Today\"]]",
+        "show_percentage_stats": 0
+    },
+    {
+        "doctype": "Number Card",
+        "name": "Total Premium Written",
+        "label": "Total Premium Written",
+        "document_type": "Insurance Policy",
+        "function": "Sum",
+        "aggregate_function_based_on": "premium",
+        "is_public": 1,
+        "filters_json": "[]",
+        "show_percentage_stats": 0
+    },
+    {
+        "doctype": "Number Card",
+        "name": "Pending Claims",
+        "label": "Pending Claims",
+        "document_type": "Policy Claim",
+        "function": "Count",
+        "is_public": 1,
+        "filters_json": "[[\"Policy Claim\",\"status\",\"in\",[\"Draft\",\"Submitted\",\"\"]]]",
+        "show_percentage_stats": 0
+    }
+]

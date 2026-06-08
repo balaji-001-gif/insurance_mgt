@@ -1,0 +1,13 @@
+{
+    "app": "policy_bazar",
+    "module_name": "Policy Bazar",
+    "_comments": "",
+    "category": "Modules",
+    "icon": "octicon octicon-shield",
+    "color": "blue",
+    "link": "#workspace/Insurance Dashboard",
+    "type": "module",
+    "reverse": 0,
+    "idx": 0,
+    "label": "Insurance"
+}

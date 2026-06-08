@@ -1,0 +1,30 @@
+[
+    {
+        "doctype": "AI Prompt",
+        "prompt_name": "Risk Scoring",
+        "model": "gpt-4o",
+        "temperature": 0.0,
+        "prompt_template": "You are an insurance underwriter.\nGiven the following customer profile and policy details, assign a risk score between 0 (no risk) and 100 (high risk).\n\nCustomer:\n{profile}\n\nPolicy:\n{policy}\n\nRespond with only the numeric score as a number between 0 and 100."
+    },
+    {
+        "doctype": "AI Prompt",
+        "prompt_name": "Policy Recommendations",
+        "model": "gpt-4o",
+        "temperature": 0.7,
+        "prompt_template": "You are an AI policy recommender.\nCustomer profile:\n{customer_profile}\n\nAvailable policies:\n{market_data}\n\nRecommend the 3 best policies (by name) with a 1-sentence rationale each:"
+    },
+    {
+        "doctype": "AI Prompt",
+        "prompt_name": "Claim Auto-Fill",
+        "model": "gpt-4o",
+        "temperature": 0.0,
+        "prompt_template": "Extract the following fields in JSON from this claim description:\n- claimant_name\n- date_of_event (YYYY-MM-DD)\n- incident_description\n\nDescription:\n{claim_text}\n\nJSON:"
+    },
+    {
+        "doctype": "AI Prompt",
+        "prompt_name": "Fraud Detection",
+        "model": "gpt-4o",
+        "temperature": 0.0,
+        "prompt_template": "You are an insurance fraud detector.\nClaim details:\n{claim_details}\n\nAnswer in JSON {\"fraud\": bool, \"reason\": str}:"
+    }
+]

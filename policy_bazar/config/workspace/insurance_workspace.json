@@ -201,7 +201,20 @@
     "modified_by": "Administrator",
     "module": "Policy Bazar",
     "name": "Insurance Dashboard",
-    "number_cards": [],
+    "number_cards": [
+        {
+            "label": "Active Policies",
+            "number_card_name": "Active Policies"
+        },
+        {
+            "label": "Total Premium Written",
+            "number_card_name": "Total Premium Written"
+        },
+        {
+            "label": "Pending Claims",
+            "number_card_name": "Pending Claims"
+        }
+    ],
     "owner": "Administrator",
     "parent_page": "",
     "public": 1,
