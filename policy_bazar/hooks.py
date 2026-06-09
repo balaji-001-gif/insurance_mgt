@@ -10,7 +10,7 @@ app_email = "you@example.com"
 app_license = "MIT"
 
 # Include custom JS
-app_include_js = "policy_bazar.js"
+app_include_js = "js/policy_bazar.js"
 
 # Desk module configuration
 desktop.py = "policy_bazar.config.desk"
