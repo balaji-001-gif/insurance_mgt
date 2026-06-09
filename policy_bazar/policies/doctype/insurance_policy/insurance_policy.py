@@ -79,7 +79,7 @@ class InsurancePolicy(Document):
         Get AI-powered policy recommendations for the customer.
         Called from client-side "Recommend Policies" button.
         """
-        cust = frappe.get_doc("Customer", self.customer)
+        cust = frappe.get_doc("Insurance Customer", self.customer)
 
         # Build market data from other policies
         market = frappe.get_all(
@@ -108,7 +108,7 @@ class InsurancePolicy(Document):
         """
         Generate and email a quote PDF for this policy.
         """
-        customer = frappe.get_doc("Customer", self.customer)
+        customer = frappe.get_doc("Insurance Customer", self.customer)
         if not customer.email:
             frappe.throw("Customer has no email address")
 
@@ -145,7 +145,7 @@ class InsurancePolicy(Document):
             fields=["name", "customer", "policy_end"],
         )
         for p in expiring:
-            email = frappe.db.get_value("Customer", p.customer, "email")
+            email = frappe.db.get_value("Insurance Customer", p.customer, "email")
             if email:
                 frappe.sendmail(
                     recipients=email,

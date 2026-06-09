@@ -36,7 +36,7 @@
             "is_query_report": 0,
             "label": "Customer",
             "link_count": 0,
-            "link_to": "Customer",
+            "link_to": "Insurance Customer",
             "link_type": "DocType",
             "onboard": 1,
             "type": "Link"

@@ -10,7 +10,7 @@ class TestPolicyClaim(FrappeTestCase):
         """Set up test dependencies."""
         self.customer = frappe.get_doc(
             {
-                "doctype": "Customer",
+                "doctype": "Insurance Customer",
                 "customer_id": "TEST-CL-CUST-001",
                 "customer_name": "Claim Test Customer",
                 "email": "claimtest@example.com",

@@ -7,7 +7,7 @@ module_list = [
     {
         "label": _("Policy Bazar"),
         "items": [
-            {"type": "doctype", "name": "Customer"},
+            {"type": "doctype", "name": "Insurance Customer"},
             {"type": "doctype", "name": "Insurer"},
             {"type": "doctype", "name": "Insurance Policy"},
             {"type": "doctype", "name": "Policy Claim"},

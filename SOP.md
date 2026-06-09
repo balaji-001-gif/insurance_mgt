@@ -14,7 +14,7 @@
 3. [Post-Installation Setup](#3-post-installation-setup)
 4. [Architecture Overview](#4-architecture-overview)
 5. [Working with Master Data](#5-working-with-master-data)
-   - [5.1 Creating a Customer](#51-creating-a-customer)
+   - [5.1 Creating an Insurance Customer](#51-creating-an-insurance-customer)
    - [5.2 Creating an Insurer](#52-creating-an-insurer)
 6. [Working with Insurance Policies](#6-working-with-insurance-policies)
    - [6.1 Creating a Policy](#61-creating-a-policy)
@@ -189,7 +189,7 @@ bench restart
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │  ┌──────────┐    ┌─────────┐    ┌──────────────────┐        │
-│  │ Customer │◄───│ Policy  │───►│   Policy Claim    │        │
+│  │ Insurance │◄───│ Policy  │───►│   Policy Claim    │        │
 │  └──────────┘    │         │    └──────────────────┘        │
 │                  │ Policy  │                                 │
 │  ┌──────────┐    │         │    ┌──────────────────┐        │
@@ -206,7 +206,7 @@ bench restart
 
 | Doctype | Key Fields |
 |---|---|
-| **Customer** | customer_id, customer_name, email, phone, address, age, medical_history |
+| **Insurance Customer** | customer_id, customer_name, email, phone, address, age, medical_history |
 | **Insurer** | insurer_code, insurer_name, website, email, phone |
 | **Insurance Policy** | policy_number, customer (link), insurer (link), policy_start, policy_end, premium, sum_assured, policy_type, risk_score, risk_score_last_updated, risk_score_overridden, override_reason |
 | **Policy Claim** | claim_id, policy (link), claimant_name, date_of_claim, claim_amount, claim_description, incident_description, status, fraud_flag |
@@ -217,9 +217,9 @@ bench restart
 
 ## 5. Working with Master Data
 
-### 5.1 Creating a Customer
+### 5.1 Creating an Insurance Customer
 
-**Navigation:** Insurance Dashboard → **Customers** card → Click **+ Add Customer**
+**Navigation:** Insurance Dashboard → **Insurance Customers** card → Click **+ Add Insurance Customer**
 
 **Form Fields:**
 
@@ -238,7 +238,7 @@ bench restart
 - Customer ID must be unique
 
 **Step-by-Step:**
-1. Click → **+ Add Customer** (top-right or via the master data section)
+1. Click → **+ Add Insurance Customer** (top-right or via the master data section)
 2. Fill in **Customer ID** (e.g., `CUST-001`)
 3. Fill in **Customer Name** (e.g., `John Doe`)
 4. (Optional) Enter **Email**, **Phone**, **Address**
@@ -279,7 +279,7 @@ bench restart
 | Field | Required | Description |
 |---|---|---|
 | Policy Number | ✅ | Unique policy number |
-| Customer | ✅ | Link to Customer doctype |
+| Customer | ✅ | Link to Insurance Customer doctype |
 | Insurer | ✅ | Link to Insurer doctype |
 | Policy Type | ✅ | Life / Health / Vehicle / Home / Travel |
 | Start Date | ✅ | When coverage begins |
@@ -293,7 +293,7 @@ bench restart
 
 **Step-by-Step:**
 1. Click → **+ Add Insurance Policy**
-2. Select an existing **Customer** from the dropdown
+2. Select an existing **Insurance Customer** from the dropdown
 3. Select an existing **Insurer** from the dropdown
 4. Choose **Policy Type** (Life, Health, Vehicle, Home, Travel)
 5. Enter **Policy Number** (e.g., `POL-2026-001`)
@@ -486,7 +486,7 @@ This data can be exported to retrain custom AI models.
 ├───────────────────────────────────────────────────┤
 │   Master Data              │  Operations           │
 │   ┌────────┐ ┌────────┐   │  ┌────────┐ ┌───────┐│
-│   │Customer│ │Insurer │   │  │Policies│ │Claims ││
+│   │Insurance│ │Insurer │   │  │Policies│ │Claims ││
 │   └────────┘ └────────┘   │  └────────┘ └───────┘│
 │   ┌────────┐              │  ┌──────────────┐     │
 │   │AI      │              │  │Policy Compare│     │
@@ -616,7 +616,7 @@ frappe.get_all("Scheduled Job Log", filters={"scheduled_job_type": "policy_bazar
 
 | Doctype | Insurance Manager | Insurance User |
 |---|---|---|
-| Customer | Create, Read, Write, Delete | Create, Read |
+| Insurance Customer | Create, Read, Write, Delete | Create, Read |
 | Insurer | Create, Read, Write, Delete | Create, Read |
 | Insurance Policy | Create, Read, Write, Delete | Create, Read |
 | Policy Claim | Create, Read, Write, Delete | Create, Read |
@@ -653,7 +653,7 @@ bench --site your-site run-tests --module "Policy Bazar"
 
 After installation, verify:
 
-- [ ] Can create a Customer
+- [ ] Can create an Insurance Customer
 - [ ] Customer email validation works (invalid emails rejected)
 - [ ] Can create an Insurer
 - [ ] Can create an Insurance Policy with valid dates
@@ -681,7 +681,7 @@ After installation, verify:
 |---|---|
 | `ModuleNotFoundError: No module named 'policy_bazar'` | Run `bench build` and restart bench |
 | App not showing in module list | Verify `modules.txt` has correct format. Run `bench migrate` |
-| `frappe.exceptions.DoesNotExistError: DocType Customer` | Check that Customer doctype JSON is valid. Re-install app |
+| `frappe.exceptions.DoesNotExistError: DocType Insurance Customer` | Check that Insurance Customer doctype JSON is valid. Re-install app |
 | Desktop icon not appearing | Run `bench build` and clear browser cache |
 
 ### 15.2 AI Features Not Working
@@ -748,7 +748,7 @@ Use the standard ERPNext **Customize Form** feature:
 
 ### Q4: Can I integrate this with other ERPNext modules?
 
-**Yes.** Since Customer is an ERPNext-native doctype, you can link policies to **Sales Orders**, **Invoices**, **Quotations**, etc. via standard ERPNext customization.
+**Yes.** The **Insurance Customer** doctype is independent, but you can link ERPNext's native Customer doctype to policies via standard customization if needed.
 
 ### Q5: How do I export data?
 
@@ -815,7 +815,7 @@ policy_bazar/
     │   ├── doctype/
     │   │   ├── ai_feedback/
     │   │   ├── ai_prompt/
-    │   │   ├── customer/
+    │   │   ├── insurance_customer/
     │   │   ├── insurance_policy/
     │   │   ├── insurer/
     │   │   └── policy_claim/

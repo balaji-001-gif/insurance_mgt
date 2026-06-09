@@ -6,7 +6,7 @@ Compatible with Frappe/ERPNext v15+, built on the ERPNext Core framework.
 
 ## Features
 
-- **Master Data**: Customer, Insurer management
+- **Master Data**: Insurance Customer, Insurer management
 - **Transactions**: Insurance Policy, Policy Claim
 - **AI-Powered**:
   - Risk scoring via OpenAI integration

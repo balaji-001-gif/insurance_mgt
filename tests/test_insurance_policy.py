@@ -10,7 +10,7 @@ class TestInsurancePolicy(FrappeTestCase):
         """Set up test dependencies."""
         self.customer = frappe.get_doc(
             {
-                "doctype": "Customer",
+                "doctype": "Insurance Customer",
                 "customer_id": "TEST-CUST-001",
                 "customer_name": "Test Customer",
                 "email": "test@example.com",
@@ -72,7 +72,7 @@ class TestInsurancePolicy(FrappeTestCase):
         with self.assertRaises(frappe.ValidationError):
             frappe.get_doc(
                 {
-                    "doctype": "Customer",
+                    "doctype": "Insurance Customer",
                     "customer_id": "TEST-CUST-INVALID",
                     "customer_name": "Invalid Email",
                     "email": "not-an-email",

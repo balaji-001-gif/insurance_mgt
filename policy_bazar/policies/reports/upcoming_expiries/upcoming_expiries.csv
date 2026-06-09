@@ -1,6 +1,6 @@
 select
   name           as "Policy:Link/Insurance Policy:150",
-  customer       as "Customer:Link/Customer:150",
+  customer       as "Customer:Link/Insurance Customer:150",
   policy_end     as "Expiry Date:Date:120",
   premium        as "Premium:Currency:120"
 from `tabInsurance Policy`
