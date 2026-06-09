@@ -9,9 +9,6 @@ app_color = "blue"
 app_email = "you@example.com"
 app_license = "MIT"
 
-# Desk module configuration
-desktop.py = "policy_bazar.config.desk"
-
 # Notifications
 notification_config = "policy_bazar.config.notification.get_notification_config"
 
