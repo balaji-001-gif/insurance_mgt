@@ -9,9 +9,6 @@ app_color = "blue"
 app_email = "you@example.com"
 app_license = "MIT"
 
-# Include custom JS
-app_include_js = "js/policy_bazar.js"
-
 # Desk module configuration
 desktop.py = "policy_bazar.config.desk"
 
@@ -22,6 +19,7 @@ notification_config = "policy_bazar.config.notification.get_notification_config"
 workspace_name = "Insurance Dashboard"
 
 # DocType JS - Client-side scripts per doctype
+# Loaded at runtime via Frappe's asset system (not processed by esbuild)
 doctype_js = {
     "Insurance Policy": "public/js/insurance_policy.js",
 }
@@ -32,12 +30,6 @@ scheduler_events = {
         "policy_bazar.policies.doctype.insurance_policy.insurance_policy.send_expiry_reminders",
     ],
 }
-
-# Override standard methods (optional - uncomment as needed)
-# override_whitelisted_methods = {
-#     "erpnext.selling.doctype.quotation.quotation.make_sales_order":
-#         "policy_bazar.policies.doctype.insurance_policy.insurance_policy.make_sales_order"
-# }
 
 # Custom pages
 page_js = {
