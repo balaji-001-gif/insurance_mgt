@@ -8,7 +8,7 @@ setup(
     author_email="you@example.com",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=["frappe>=15,<16"],
+    install_requires=["openai>=1.0.0"],
     license="MIT",
     zip_safe=False,
     python_requires=">=3.10",
